@@ -1,0 +1,39 @@
+﻿@model BookingSystemModel.Flight
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden />
+    <h2 class="text-center m-4">Delete form</h2>
+    <div class="border form-group container-fluid row">
+        <div class="col-2 text-right">
+            <label asp-for="Airline"></label>
+        </div>
+        <div class="col-6">
+            <select asp-for="Airline" disabled>
+                <option selected disabled>--Select Airline--</option>
+                <option>Qatar</option>
+                <option>Malaysia</option>
+                <option>Singapore</option>
+            </select>
+            <br />
+            <br />
+        </div>
+        <div class="container-fluid row">
+            <div class="col-2 text-right">
+                <label asp-for="Time"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Time" disabled />
+            </div>
+            <br />
+            <br />
+            <div class="container-fluid row">
+                <div class="col-6 text-right">
+                    <input type="submit" class="btn-danger btn w-75" value="Delete" />
+                </div>
+                <div class="col-6">
+                    <a asp-controller="Flight" asp-action="Index" class="btn-success btn w-75">Return To Booking Site</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

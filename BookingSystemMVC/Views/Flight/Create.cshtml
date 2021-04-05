@@ -1,0 +1,55 @@
+﻿@model BookingSystemModel.Flight
+
+@{
+    Layout = null;
+}
+
+<br />
+<h2>Flight Booking Form</h2>
+<br />
+<form method="post" asp-action="Create">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="border form-group container-fluid row">
+        <div class="col-2 text-right">
+            <label asp-for="Airline"></label>
+        </div>
+        <div class="col-6">
+            <select asp-for="Airline">
+                <option selected disabled>--Select Airline--</option>
+                <option>Qatar</option>
+                <option>Malaysia</option>
+                <option>Singapore</option>
+            </select>
+            <span asp-validation-for="Airline" class="text-danger"></span>
+            <br />
+            <br />
+        </div>
+        <div class="container-fluid row">
+            <div class="col-2 text-right">
+                <label asp-for="Time"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Time" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <br />
+            <br />
+        </div>
+        <div class="container-fluid row">
+            <div class="col-6 text-right">
+                <input type="submit" class="btn-primary btn w-75" value="Submit" />
+            </div>
+            <div class="col-6">
+                <a asp-controller="Flight" asp-action="Index" class="btn-success btn w-75">Return To Booking Site</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}
